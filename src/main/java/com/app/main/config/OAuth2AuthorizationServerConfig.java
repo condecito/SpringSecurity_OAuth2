@@ -92,7 +92,7 @@ public class OAuth2AuthorizationServerConfig {
     public JWKSource<SecurityContext> jwkSource(KeyPair keyPair) {
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
-        // @formatter:off
+
         RSAKey rsaKey = new RSAKey.Builder(publicKey)
                 .privateKey(privateKey)
                 .keyID(UUID.randomUUID().toString())
