@@ -62,7 +62,7 @@ public class OAuth2AuthorizationServerConfig {
     }
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
-
+//obtenerlo de la BD
         RegisteredClient loginClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("login-client")
                 .clientSecret("{noop}openid-connect")
