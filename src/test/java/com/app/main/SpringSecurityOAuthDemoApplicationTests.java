@@ -50,7 +50,7 @@ class SpringSecurityOAuthDemoApplicationTests {
 
     @Test
     void getInformationAccesFromServerOauthOk() throws Exception {
-        // @formatter:off
+
         this.mockMvc.perform(post("/oauth2/introspect")
                         .param("token", getAccessToken())
                         .with(basicAuth(CLIENT_ID, CLIENT_SECRET)))
@@ -65,7 +65,7 @@ class SpringSecurityOAuthDemoApplicationTests {
                 .andExpect(jsonPath("$.scope").value("message:read"))
                 .andExpect(jsonPath("$.sub").value(CLIENT_ID))
                 .andExpect(jsonPath("$.token_type").value("Bearer"));
-        // @formatter:on
+
     }
 
 
